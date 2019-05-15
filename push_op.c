@@ -16,14 +16,14 @@ void push_op(stack_t **stack, unsigned int line_number)
 	if (number == NULL)
 	{
 		dprintf(STDERR_FILENO,
-			 "L%u: usage: push integer", line_number);
+			 "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	integer = atoi(number);
 	new = (stack_t *)malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed");
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = integer;
