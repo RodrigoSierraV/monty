@@ -14,13 +14,10 @@ void (*get_func(char *func))(stack_t **stack, unsigned int line_number)
 		{"pall", pall_op},
 		{NULL, NULL}
 	};
-
 	while (functions[i].opcode)
 	{
-		if (*func == *functions[i].opcode)
-		{
+		if (strcmp(func, functions[i].opcode) == 0)
 			return (functions[i].f);
-		}
 		i++;
 	}
 	return (NULL);

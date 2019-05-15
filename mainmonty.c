@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	char *buffer = NULL, delim[] = " \t\r\n", *func = NULL;
 	FILE *stream = 0;
 	unsigned int line_number = 0;
-	stack_t **stack = NULL;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 		return (0);
@@ -26,10 +26,11 @@ int main(int argc, char *argv[])
 	while (getline(&buffer, &bufsize, stream) != -1)
 	{
 		line_number++;
-		printf("%d\n", line_number);
 		func = strtok(buffer, delim);
 		if (func != NULL)
-			(*get_func(func))(stack, line_number);
+		{
+			(*get_func(func))(&stack, line_number);
+		}
 	}
 	return (0);
 }

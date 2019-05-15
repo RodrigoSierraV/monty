@@ -13,7 +13,7 @@ void pall_op(stack_t **stack, unsigned int line_number)
 
 	(void)line_number;
 
-	while (aux->next)
+	while (aux)
 	{
 		printf("%d\n", aux->n);
 		aux = aux->next;
