@@ -15,21 +15,24 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 
 	if (argc != 2)
-		return (0);
+	{
+		dprintf(STDERR_FILENO, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
 	stream = fopen(argv[1], "r");
 	if (stream == NULL)
 	{
-		printf("Error: can´t open file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: can´t open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
+	/*Read lines from source file*/
 	while (getline(&buffer, &bufsize, stream) != -1)
 	{
 		line_number++;
 		func = strtok(buffer, delim);
 		if (func != NULL)
 		{
-			(*get_func(func))(&stack, line_number);
+			get_func(func, &stack, line_number);
 		}
 	}
 	return (0);
