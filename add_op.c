@@ -11,10 +11,10 @@ void add_op(stack_t **stack, unsigned int line_number)
 	int add = 0;
 	stack_t *new = NULL;
 
-	(void)line_number;
 	if (!*stack || !(*stack)->next)
 	{
-		dprintf(STDERR_FILENO, "can't add, stack too short\n");
+		dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n",
+			line_number);
 		exit(EXIT_FAILURE);
 	}
 
