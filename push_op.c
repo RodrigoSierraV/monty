@@ -9,7 +9,7 @@
 void push_op(stack_t **stack, unsigned int line_number)
 {
 	char *number = NULL;
-	int integer;
+	int integer, is, i = 0;
 	stack_t *new = NULL, *aux = *stack;
 
 	number = strtok(NULL, " \n\t\r");
@@ -18,6 +18,17 @@ void push_op(stack_t **stack, unsigned int line_number)
 		dprintf(STDERR_FILENO,
 			 "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
+	}
+	while (number[i])
+	{
+		is =  isdigit(number[i]);
+		if (is == 0)
+		{
+			dprintf(STDERR_FILENO,
+			"L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+		i++;
 	}
 	integer = atoi(number);
 	new = (stack_t *)malloc(sizeof(stack_t));
