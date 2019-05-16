@@ -16,6 +16,8 @@ stack_t *get_func(char *func, stack_t **stack, unsigned int line_number)
 		{"pall", pall_op},
 		{"pint", pint_op},
 		{"pop", pop_op},
+		{"swap", swap_op},
+		{"add", add_op},
 		{NULL, NULL}
 	};
 	while (functions[i].opcode)
@@ -23,7 +25,7 @@ stack_t *get_func(char *func, stack_t **stack, unsigned int line_number)
 		if (strcmp(func, functions[i].opcode) == 0)
 		{
 			functions[i].f(stack, line_number);
-			return (*stack);
+			return(*stack);
 		}
 		i++;
 	}
