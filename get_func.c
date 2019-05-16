@@ -15,6 +15,7 @@ void get_func(char *func, stack_t **stack, unsigned int line_number)
 		{"push", push_op},
 		{"pall", pall_op},
 		{"pint", pint_op},
+		{"pop", pop_op},
 		{NULL, NULL}
 	};
 	while (functions[i].opcode)
