@@ -25,7 +25,7 @@ stack_t *get_func(char *func, stack_t **stack, unsigned int line_number)
 		if (strcmp(func, functions[i].opcode) == 0)
 		{
 			functions[i].f(stack, line_number);
-			return(*stack);
+			return (*stack);
 		}
 		i++;
 	}

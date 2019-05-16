@@ -30,7 +30,7 @@ void add_op(stack_t **stack, unsigned int line_number)
 	new->next = (*stack)->next;
 	new->prev = *stack;
 	(*stack)->next = (*stack)->next->prev = new;
-        *stack = new;
-        free((*stack)->prev);
-	(*stack)->prev = NULL; 	
+	stack = new;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
 }
