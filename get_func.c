@@ -18,6 +18,7 @@ stack_t *get_func(char *func, stack_t **stack, unsigned int line_number)
 		{"pop", pop_op},
 		{"swap", swap_op},
 		{"add", add_op},
+		{"nop", nop_op},
 		{NULL, NULL}
 	};
 	while (functions[i].opcode)
