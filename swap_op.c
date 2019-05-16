@@ -10,11 +10,11 @@
 void swap_op(stack_t **stack, unsigned int line_number)
 {
 
-	if (!*stack || !(*stack)->next:)
-        {
-                dprintf(STDERR_FILENO, "can't swap, stack too short\n");
-                exit(EXIT_FAILURE);
-        }
+	if (!*stack || !(*stack)->next)
+	{
+		dprintf(STDERR_FILENO, "can't swap, stack too short\n");
+		exit(EXIT_FAILURE);
+	}
 	(void)*stack;
 	(void)line_number;
 }
