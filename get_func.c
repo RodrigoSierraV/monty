@@ -7,7 +7,7 @@
  * @line_number: line number from input file
  * Return: execution of a function pointer.
  */
-void get_func(char *func, stack_t **stack, unsigned int line_number)
+stack_t *get_func(char *func, stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 
@@ -23,7 +23,7 @@ void get_func(char *func, stack_t **stack, unsigned int line_number)
 		if (strcmp(func, functions[i].opcode) == 0)
 		{
 			functions[i].f(stack, line_number);
-			return;
+			return (*stack);
 		}
 		i++;
 	}

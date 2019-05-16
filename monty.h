@@ -40,9 +40,10 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void get_func(char *func, stack_t **stack, unsigned int line_number);
+stack_t *get_func(char *func, stack_t **stack, unsigned int line_number);
 void push_op(stack_t **stack, unsigned int line_number);
 void pall_op(stack_t **stack, unsigned int line_number);
 void pint_op(stack_t **stack, unsigned int line_number);
 void pop_op(stack_t **stack, unsigned int line_number);
+void free_list(stack_t *head);
 #endif /*_MONTY_H_*/

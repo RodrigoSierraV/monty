@@ -32,8 +32,12 @@ int main(int argc, char *argv[])
 		func = strtok(buffer, delim);
 		if (func != NULL)
 		{
-			get_func(func, &stack, line_number);
+			stack = get_func(func, &stack, line_number);
 		}
 	}
-	return (0);
+	free(buffer);
+	free_list(stack);
+	fclose(stream);
+
+	exit(EXIT_SUCCESS);
 }
