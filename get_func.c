@@ -22,6 +22,7 @@ stack_t *get_func(char *func, stack_t **stack, unsigned int line_number)
 		{"sub", sub_op},
 		{"div", div_op},
 		{"mul", mul_op},
+		{"pchar", pchar_op},
 		{NULL, NULL}
 	};
 	while (functions[i].opcode)

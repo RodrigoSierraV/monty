@@ -52,4 +52,5 @@ void nop_op(stack_t **stack, unsigned int line_number);
 void sub_op(stack_t **stack, unsigned int line_number);
 void mul_op(stack_t **stack, unsigned int line_number);
 void div_op(stack_t **stack, unsigned int line_number);
+void pchar_op(stack_t **stack, unsigned int line_number);
 #endif /*_MONTY_H_*/
