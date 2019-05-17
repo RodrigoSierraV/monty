@@ -22,7 +22,7 @@ void push_op(stack_t **stack, unsigned int line_number)
 	while (number[i])
 	{
 		is =  isdigit(number[i]);
-		if (is == 0 && number[i] != '-' && number[i + 1])
+		if ((is == 0 && number[i] != '-') || isdigit(number[i + 1] == 0))
 		{
 			dprintf(STDERR_FILENO,
 			"L%u: usage: push integer\n", line_number);
