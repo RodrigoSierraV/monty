@@ -18,7 +18,7 @@ void sub_op(stack_t **stack, unsigned int line_number)
 	}
 
 	sub = (*stack)->next->n - (*stack)->n;
-	(*stack)->next->n = add;
+	(*stack)->next->n = sub;
 	*stack = (*stack)->next;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
