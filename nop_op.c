@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pall_op - prints elements of stack.
+ * nop_op - opcode nop doesnt do anything.
  * @stack: pointer to the head of a doubly linked list
  * @line_number: line number from input file
  * Return: Nothing
