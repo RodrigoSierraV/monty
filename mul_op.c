@@ -1,24 +1,24 @@
 #include "monty.h"
 
 /**
- * sub_op - subs the top two elements of the stack.
+ * mul_op - adds the top two elements of the stack.
  * @stack: pointer to the head of a doubly linked list
  * @line_number: line number from input file
  *
  */
-void sub_op(stack_t **stack, unsigned int line_number)
+void mul_op(stack_t **stack, unsigned int line_number)
 {
-	int sub = 0;
+	int mul = 0;
 
 	if (!*stack || !(*stack)->next)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't sub, stack too short\n",
+		dprintf(STDERR_FILENO, "L%u: can't mul, stack too short\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
 
-	sub = (*stack)->next->n - (*stack)->n;
-	(*stack)->next->n = sub;
+	mul = (*stack)->n * (*stack)->next->n;
+	(*stack)->next->n = mul;
 	*stack = (*stack)->next;
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
