@@ -8,7 +8,7 @@
  */
 void sub_op(stack_t **stack, unsigned int line_number)
 {
-	int add = 0;
+	int sub = 0;
 
 	if (!*stack || !(*stack)->next)
 	{
@@ -17,7 +17,7 @@ void sub_op(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	add = (*stack)->n - (*stack)->next->n;
+	sub = (*stack)->next->n - (*stack)->n;
 	(*stack)->next->n = add;
 	*stack = (*stack)->next;
 	free((*stack)->prev);
