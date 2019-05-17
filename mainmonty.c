@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	{
 		line_number++;
 		func = strtok(buffer, delim);
-		if (func != NULL)
+		if (func != NULL && func[0] != '#')
 		{
 			stack = get_func(func, &stack, line_number);
 		}
