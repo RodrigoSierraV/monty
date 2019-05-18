@@ -58,4 +58,6 @@ void mod_op(stack_t **stack, unsigned int line_number);
 void add_dnodeint_end(stack_t **stack, const int n);
 void rotl_op(stack_t **stack, unsigned int line_number);
 void rotr_op(stack_t **stack, unsigned int line_number);
+void add_dnodeint(stack_t **stack, const int n);
+extern int modusoperandi; /*Global variable to set stack or queue mode*/
 #endif /*_MONTY_H_*/

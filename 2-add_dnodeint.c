@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * add_dnodeint_end - adds a new node at the end of a dlistint_t list.
+ * add_dnodeint - adds a new node at the beginning of a dlistint_t list.
  * @stack: pointer to the head of the list
  * @n: number to insret in the list.
  * Return: pointer to the new node.
  */
-void add_dnodeint_end(stack_t **stack, const int n)
+void add_dnodeint(stack_t **stack, const int n)
 {
 	stack_t *aux = *stack, *new = *stack;
 
@@ -24,8 +24,7 @@ void add_dnodeint_end(stack_t **stack, const int n)
 		*stack = new;
 		return;
 	}
-	while (aux->next)
-		aux = aux->next;
-	aux->next = new;
-	new->prev = aux;
+	*stack = new;
+	new->next = aux;
+	aux->prev = new;
 }

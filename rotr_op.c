@@ -20,14 +20,14 @@ void rotr_op(stack_t **stack, unsigned int line_number)
 	aux->prev->next = NULL;
 	free(aux);
 	new = (stack_t *)malloc(sizeof(stack_t));
-        if (new == NULL)
-        {
-                dprintf(STDERR_FILENO, "Error: malloc failed\n");
-                exit(EXIT_FAILURE);
-        }
-        new->n = bottom;
-        new->next = *stack;
-        new->prev = NULL;
+	if (new == NULL)
+	{
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	new->n = bottom;
+	new->next = *stack;
+	new->prev = NULL;
 	(*stack)->prev = new;
-        *stack = new;
+	*stack = new;
 }

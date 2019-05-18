@@ -10,7 +10,6 @@ void push_op(stack_t **stack, unsigned int line_number)
 {
 	char *number = NULL;
 	int integer, is, i = 0;
-	stack_t *new = NULL, *aux = *stack;
 
 	number = strtok(NULL, " \n\t\r");
 	if (number == NULL)
@@ -31,21 +30,10 @@ void push_op(stack_t **stack, unsigned int line_number)
 		i++;
 	}
 	integer = atoi(number);
-	new = (stack_t *)malloc(sizeof(stack_t));
-	if (new == NULL)
+	if (modusoperandi == 1)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
-	}
-	new->n = integer;
-	new->next = NULL;
-	new->prev = NULL;
-	if (*stack == NULL)
-	{
-		*stack = new;
+		add_dnodeint_end(stack, integer);
 		return;
 	}
-	*stack = new;
-	new->next = aux;
-	aux->prev = new;
+	add_dnodeint(stack, integer);
 }
