@@ -17,7 +17,7 @@ void pstr_op(stack_t **stack, unsigned int line_number)
 		printf("\n");
 		return;
 	}
-	while (aux->next && aux->n != 0 && aux->n >= 0 && aux->n <= 127)
+	while (aux && aux->n != 0 && aux->n >= 0 && aux->n <= 127)
 	{
 		printf("%c", aux->n);
 		aux = aux->next;

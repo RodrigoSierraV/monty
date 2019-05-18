@@ -1,4 +1,7 @@
 pstr
+push 98
+pstr
+push 1
 push 2
 push 3
 push 4
